@@ -48,6 +48,8 @@ public class BST {
      */
     public boolean search(int val) {
         // TODO: Complete the search function
+
+
         return false;
     }
 
@@ -64,7 +66,23 @@ public class BST {
      */
     public ArrayList<BSTNode> getPreorder() {
         // TODO: Complete preorder traversal
-        return null;
+        // empty arrayList
+        // method returns an arrayList of nodes
+        ArrayList<BSTNode> arrNodes = new ArrayList<BSTNode>();
+        BSTNode root = getRoot();
+
+        preorder(root, arrNodes);
+        return arrNodes;
+    }
+    public void preorder(BSTNode root, ArrayList<BSTNode> arrNodes){
+        if(root != null){
+            //preorder starts with the roots and moves down
+            arrNodes.add(root);
+            //moves to traversing the left side of the tree
+            preorder(root.getLeft(), arrNodes);
+            //traverses the right side after left
+            preorder(root.getRight(), arrNodes);
+        }
     }
 
     /**
@@ -72,6 +90,7 @@ public class BST {
      */
     public ArrayList<BSTNode> getPostorder() {
         // TODO: Complete postorder traversal
+
         return null;
     }
 
